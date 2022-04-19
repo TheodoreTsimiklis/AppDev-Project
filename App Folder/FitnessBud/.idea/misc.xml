@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_bar_chart_24.xml" value="0.3828125" />
+        <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_directions_run_24.xml" value="0.3828125" />
+        <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.3828125" />
+        <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.3828125" />
+        <entry key="..\:/FitnessBud/app/src/main/res/drawable/nav_item_color_state.xml" value="0.3828125" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_forgot_password.xml" value="0.26268115942028986" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
-        <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_profile.xml" value="0.276268115942029" />
+        <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_register_user.xml" value="0.25" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/register_page.xml" value="0.2957427536231884" />
+        <entry key="..\:/FitnessBud/app/src/main/res/menu/bottom_nav.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

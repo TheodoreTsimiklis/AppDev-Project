@@ -3,6 +3,7 @@ package com.example.fitnessbud;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -35,6 +36,7 @@ public class ForgotPassword extends AppCompatActivity {
         resetPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 resetPassword();
             }
         });
@@ -60,6 +62,7 @@ public class ForgotPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(ForgotPassword.this, "An email has been sent to reset Password", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(ForgotPassword.this, MainActivity.class));
                 } else {
                     Toast.makeText(ForgotPassword.this, "An error has occured. Try again!", Toast.LENGTH_SHORT).show();
                 }
