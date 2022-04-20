@@ -3,24 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/nav_home"
         android:title="Home"
         android:icon="@drawable/ic_baseline_home_24"
         />
 
     <item
-        android:id="@+id/diary"
+        android:id="@+id/nav_diary"
         android:title="Diary"
         android:icon="@drawable/ic_baseline_menu_book_24"/>
 
     <item
-        android:id="@+id/exercises"
+        android:id="@+id/nav_exercises"
         android:title="Exercises"
         android:icon="@drawable/ic_baseline_directions_run_24"/>
 
     <item
-        android:id="@+id/progress"
+        android:id="@+id/nav_progress"
         android:title="Progress"
         android:icon="@drawable/ic_baseline_bar_chart_24"/>
+
+    <item
+        android:id="@+id/nav_logOut"
+        android:title="Sign Out"
+        android:icon="@drawable/ic_baseline_login_24"/>
 
 </menu>

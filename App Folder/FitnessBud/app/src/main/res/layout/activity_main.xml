@@ -63,6 +63,7 @@
         android:minHeight="48dp"
         android:textSize="24sp"
         android:hint="Email Address"
+        app:passwordToggleEnabled ="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
