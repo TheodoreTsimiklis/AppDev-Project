@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FitnessBud/app/src/main/res/drawable/border.xml" value="0.3675" />
         <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_bar_chart_24.xml" value="0.3828125" />
         <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_directions_run_24.xml" value="0.3828125" />
         <entry key="..\:/FitnessBud/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.3828125" />
@@ -16,7 +17,7 @@
         <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_profile_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/activity_register_user.xml" value="0.25" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/fragment_container.xml" value="0.36666666666666664" />
-        <entry key="..\:/FitnessBud/app/src/main/res/layout/fragment_diary.xml" value="0.36666666666666664" />
+        <entry key="..\:/FitnessBud/app/src/main/res/layout/fragment_diary.xml" value="0.33" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/fragment_exercises.xml" value="0.36666666666666664" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/fragment_profile.xml" value="0.35260416666666666" />
         <entry key="..\:/FitnessBud/app/src/main/res/layout/fragment_progress.xml" value="0.36666666666666664" />
