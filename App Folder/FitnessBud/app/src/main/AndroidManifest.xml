@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessBud">
         <activity
-            android:name=".Container"
+            android:name=".diary.AddActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPassword"
+            android:name=".helpers.Container"
             android:exported="false" />
         <activity
-            android:name=".RegisterUser"
+            android:name=".loginAndRegister.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".loginAndRegister.RegisterUser"
+            android:exported="false" />
+        <activity
+            android:name=".loginAndRegister.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".loginAndRegister.MainActivity">
 
     <TextView
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fitness Bud"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
         android:textSize="60sp"
         android:textAlignment="center"
         android:textStyle="bold"

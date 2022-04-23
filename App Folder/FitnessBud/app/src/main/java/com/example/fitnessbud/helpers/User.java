@@ -1,4 +1,4 @@
-package com.example.fitnessbud;
+package com.example.fitnessbud.helpers;
 
 public class User {
 

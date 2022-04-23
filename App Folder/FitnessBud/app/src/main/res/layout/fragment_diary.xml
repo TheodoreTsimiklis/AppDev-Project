@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DiaryFragment">
+    tools:context=".diary.DiaryFragment"
+    android:id="@+id/diaryFrag">
 
     <TextView
         android:id="@+id/banner"
@@ -130,22 +131,21 @@
         app:layout_constraintVertical_bias="0.542" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/trackerBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="341dp"
         android:layout_height="19dp"
-        android:scaleY="5"
         android:max="100"
         android:progress="50"
+        android:scaleY="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936" />
+        app:layout_constraintVertical_bias="0.897" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/calorieTrackerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calorie Tracker"
@@ -157,10 +157,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.859" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/viewEntriesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View Entries"
@@ -183,10 +183,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/addGoalCalories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
@@ -199,10 +199,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/displayCalorieGoal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Calorie Goal Amount"
@@ -211,8 +211,22 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.938" />
+
+    <Button
+        android:id="@+id/sendDataBtn"
+        android:layout_width="107dp"
+        android:layout_height="41dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.995" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
