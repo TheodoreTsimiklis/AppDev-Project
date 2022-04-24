@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessBud">
+
+        <activity
+            android:name=".diary.ViewEntriesActivity"
+            android:exported="false" />
         <activity
             android:name=".diary.AddActivity"
             android:exported="false" />

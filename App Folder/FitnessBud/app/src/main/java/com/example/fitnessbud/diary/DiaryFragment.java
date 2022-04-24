@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.fitnessbud.R;
@@ -20,7 +21,7 @@ public class DiaryFragment extends Fragment {
 
     private EditText goalCals;
     private TextView breakfastText, lunchText, dinnerText;
-    private Button updateBtn;
+    private Button updateBtn, viewEntries;
 
     public DiaryFragment() {
         // Required empty public constructor
@@ -37,6 +38,9 @@ public class DiaryFragment extends Fragment {
         addBreakfast(v);
         addLunch(v);
         addDinner(v);
+
+        //view Entries
+        viewEntries(v);
 
         updateBtn = v.findViewById(R.id.sendDataBtn);
         updateBtn.setOnClickListener(new View.OnClickListener() {
@@ -90,5 +94,17 @@ public class DiaryFragment extends Fragment {
             }
         });
 
+    }
+
+    private void viewEntries(View view) {
+        viewEntries = view.findViewById(R.id.viewEntriesButton);
+
+        viewEntries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), ViewEntriesActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
