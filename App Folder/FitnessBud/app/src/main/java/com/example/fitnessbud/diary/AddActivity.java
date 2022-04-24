@@ -25,41 +25,24 @@ public class AddActivity extends AppCompatActivity {
         addCals = findViewById(R.id.addCaloriesTextView);
         addEntry = findViewById(R.id.addBtn);
         deleteEntry = findViewById(R.id.deleteBtn);
+
         mDbhelper =  new DatabaseHelper(this);
 
         addEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String foodEntry = addFood.getText().toString();
-                String calsEntry = addCals.getText().toString();
+                String addFoodEntry = addFood.getText().toString().trim();
+                String addCalsEntry = addCals.getText().toString().trim();
 
-                if (foodEntry.length() != 0) {
-                    addData(foodEntry);
-                    addFood.setText("");
-                } else {
-                    toastMessage("You have to add data in the food/meal text field!");
-                }
+                Boolean checkData = mDbhelper.insertData(addFoodEntry,addCalsEntry);
 
-                if (calsEntry.length() != 0) {
-                    addData(calsEntry);
-                    addCals.setText("");
+                if(checkData == true) {
+                    toastMessage("Entries Inserted");
                 } else {
-                    toastMessage("You have to add data in the calorie text field");
+                    toastMessage("Something went wrong");
                 }
             }
         });
-
-    }
-
-    public void addData(String newEntry) {
-
-        boolean insertData = mDbhelper.addData(newEntry);
-
-        if (insertData) {
-           toastMessage("Added to entries");
-        } else {
-            toastMessage("Something went wrong");
-        }
 
     }
 

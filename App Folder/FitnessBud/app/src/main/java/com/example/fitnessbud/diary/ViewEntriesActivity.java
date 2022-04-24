@@ -1,6 +1,8 @@
 package com.example.fitnessbud.diary;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.fitnessbud.R;
 
@@ -15,36 +18,49 @@ import java.util.ArrayList;
 
 public class ViewEntriesActivity extends AppCompatActivity {
 
-    private final static String TAG = "listData";
+    RecyclerView recyclerView;
+    ArrayList<String> food,calories;
+    DatabaseHelper db;
+    MyAdapter adapter;
 
-    DatabaseHelper dbHelper;
-
-    private ListView displayData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_entries);
 
-        displayData = findViewById(R.id.listData);
-        dbHelper = new DatabaseHelper(this);
+        db = new DatabaseHelper(this);
+        food = new ArrayList<>();
+        calories = new ArrayList<>();
+
+        recyclerView = findViewById(R.id.recyclerView);
+        adapter = new MyAdapter(this,food,calories);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         
-        populateListView();
+        displayData();
 
     }
 
-    private void populateListView() {
+    private void displayData() {
 
-        Log.d(TAG, "populateListView: Displaying data in the ListView.");
-        Cursor data = dbHelper.getData();
-        ArrayList<String> listData = new ArrayList<>();
-        while(data.moveToNext()) {
-            listData.add(data.getString(1));
-            listData.add(data.getString(2));
+        Cursor cursor = db.getData();
+
+        if (cursor.getCount() == 0) {
+            toastMessage("No entry exists");
+            return;
+        } else {
+            while(cursor.moveToNext()) {
+                food.add(cursor.getString(1));
+                calories.add(cursor.getString(2));
+            }
         }
 
-        ListAdapter adapter  = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
-        displayData.setAdapter(adapter);
-
     }
+
+    private void toastMessage(String message) {
+        Toast.makeText(ViewEntriesActivity.this, message, Toast.LENGTH_SHORT).show();
+    }
+
 }

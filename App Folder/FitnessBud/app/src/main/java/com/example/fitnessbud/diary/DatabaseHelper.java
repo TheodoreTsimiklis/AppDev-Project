@@ -37,13 +37,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addData(String item) {
+    public boolean insertData(String food, String calories) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, item);
-        contentValues.put(COL3, item);
-
-        Log.d(TAG, "addData: Adding " + item + "to" + TABLE_NAME);
+        contentValues.put("food", food);
+        contentValues.put("calories",calories);
 
         long res = db.insert(TABLE_NAME, null, contentValues);
 
@@ -52,12 +50,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+
     }
 
     public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
-        Cursor data = db.rawQuery(query, null);
-        return data;
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        return cursor;
     }
+
 }
