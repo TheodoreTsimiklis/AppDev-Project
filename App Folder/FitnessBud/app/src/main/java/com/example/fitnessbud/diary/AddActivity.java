@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,18 +14,17 @@ import com.example.fitnessbud.R;
 public class AddActivity extends AppCompatActivity {
 
     DatabaseHelper mDbhelper;
-    TextView addFood, addCals;
-    Button addEntry, deleteEntry;
+    EditText addFood, addCals;
+    Button addEntry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        addFood = findViewById(R.id.addFoodItemTextView);
-        addCals = findViewById(R.id.addCaloriesTextView);
+        addFood = findViewById(R.id.addFoodItemEditText);
+        addCals = findViewById(R.id.addCaloriesEditText);
         addEntry = findViewById(R.id.addBtn);
-        deleteEntry = findViewById(R.id.deleteBtn);
 
         mDbhelper =  new DatabaseHelper(this);
 

@@ -34,9 +34,7 @@ public class Container extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-
-                        switch (item.getItemId()) {
+                switch (item.getItemId()) {
                     case R.id.nav_logOut:
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(Container.this, MainActivity.class));

@@ -6,10 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.cardview.widget.CardView;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
-    private static final String TAG = "DatabaseHelper";
 
     private static final String TABLE_NAME = "nutrition_table";
     private static final String COL1 = "ID";
@@ -58,5 +59,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         return cursor;
     }
+
+    public int addCalories() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int total = 0;
+
+        Cursor cursor = db.rawQuery("SELECT SUM(" + COL3 + ") FROM " + TABLE_NAME, null);
+
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(0);
+        }
+
+        return total;
+    }
+
 
 }

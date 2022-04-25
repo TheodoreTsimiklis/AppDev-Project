@@ -1,9 +1,12 @@
 package com.example.fitnessbud.diary;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +20,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private Context ctx;
     private ArrayList food_id, calorie_id;
+
 
     public MyAdapter(Context ctx, ArrayList food_id, ArrayList calorie_id) {
         this.ctx = ctx;
