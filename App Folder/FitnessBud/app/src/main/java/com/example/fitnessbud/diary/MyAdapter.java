@@ -21,12 +21,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context ctx;
     private ArrayList food_id, calorie_id;
 
-
     public MyAdapter(Context ctx, ArrayList food_id, ArrayList calorie_id) {
         this.ctx = ctx;
         this.food_id = food_id;
         this.calorie_id = calorie_id;
     }
+
 
     @NonNull
     @Override

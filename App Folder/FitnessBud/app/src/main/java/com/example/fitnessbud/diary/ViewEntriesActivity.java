@@ -3,10 +3,13 @@ package com.example.fitnessbud.diary;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,6 +28,9 @@ public class ViewEntriesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<String> food,calories;
+
+    ConstraintLayout constraintLayout;
+
     DatabaseHelper db;
     MyAdapter adapter;
 
@@ -37,6 +43,8 @@ public class ViewEntriesActivity extends AppCompatActivity {
         food = new ArrayList<>();
         calories = new ArrayList<>();
 
+        constraintLayout = findViewById(R.id.constraintLayout);
+
         recyclerView = findViewById(R.id.recyclerView);
         adapter = new MyAdapter(this,food,calories);
 
@@ -44,18 +52,6 @@ public class ViewEntriesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         displayData();
-
-        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
-            }
-        };
     }
 
     private void displayData() {

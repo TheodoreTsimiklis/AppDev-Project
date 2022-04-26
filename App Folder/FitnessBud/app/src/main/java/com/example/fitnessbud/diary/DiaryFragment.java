@@ -55,6 +55,7 @@ public class DiaryFragment extends Fragment {
                 // setCalGoals
                 setCalGoals(v);
 
+
                 goalCals = v.findViewById(R.id.addGoalCalories);
                 Bundle res = new Bundle();
                 res.putString("df1", goalCals.getText().toString());
@@ -73,10 +74,11 @@ public class DiaryFragment extends Fragment {
         displayCalGoals = view.findViewById(R.id.displayCalorieGoal);
         ProgressBar progressBar = view.findViewById(R.id.trackerBar);
 
-        int allCals = db.addCalories();
+        db = new DatabaseHelper(getActivity().getApplicationContext());
 
         String temp = goalCals.getText().toString().trim();
 
+        int allCals = db.addCalories();
 
         displayCalGoals.setText(temp + " calories remaining");
 
@@ -85,7 +87,7 @@ public class DiaryFragment extends Fragment {
 
         int totalLeftCals = max - allCals;
 
-       progressBar.setProgress(totalLeftCals);
+        progressBar.setProgress(totalLeftCals);
 
 
     }

@@ -62,9 +62,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int addCalories() {
         SQLiteDatabase db = this.getWritableDatabase();
+
         int total = 0;
 
-        Cursor cursor = db.rawQuery("SELECT SUM(" + COL3 + ") FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT SUM(ID) FROM " + TABLE_NAME, null);
 
         if (cursor.moveToFirst()) {
             total = cursor.getInt(0);
