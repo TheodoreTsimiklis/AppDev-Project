@@ -38,6 +38,8 @@ public class AddActivity extends AppCompatActivity {
 
                 if(checkData == true) {
                     toastMessage("Entries Inserted");
+                    addFood.setText("");
+                    addCals.setText("");
                 } else {
                     toastMessage("Something went wrong");
                 }
