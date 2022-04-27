@@ -55,13 +55,10 @@ public class DiaryFragment extends Fragment {
                 // setCalGoals
                 setCalGoals(v);
 
-
                 goalCals = v.findViewById(R.id.addGoalCalories);
                 Bundle res = new Bundle();
                 res.putString("df1", goalCals.getText().toString());
                 getParentFragmentManager().setFragmentResult("dataFrom1", res);
-                goalCals.setText("");
-
 
             }
         });
@@ -80,15 +77,13 @@ public class DiaryFragment extends Fragment {
 
         int allCals = db.addCalories();
 
-        displayCalGoals.setText(temp + " calories remaining");
-
         int max = Integer.parseInt(temp);
         progressBar.setMax(max);
 
         int totalLeftCals = max - allCals;
 
         progressBar.setProgress(totalLeftCals);
-
+        displayCalGoals.setText(totalLeftCals + " calories Remaining");
 
     }
 

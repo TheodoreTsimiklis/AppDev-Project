@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL2 = "food";
     private static final String COL3 = "calories";
 
-    DatabaseHelper(Context context) {
+    public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
 
@@ -65,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int total = 0;
 
-        Cursor cursor = db.rawQuery("SELECT SUM(ID) FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT SUM(calories) FROM " + TABLE_NAME, null);
 
         if (cursor.moveToFirst()) {
             total = cursor.getInt(0);
