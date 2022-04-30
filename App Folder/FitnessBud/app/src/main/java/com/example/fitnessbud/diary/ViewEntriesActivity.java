@@ -39,6 +39,9 @@ public class ViewEntriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_entries);
 
+        getSupportActionBar().setTitle("View Entries");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         db = new DatabaseHelper(this);
         food = new ArrayList<>();
         calories = new ArrayList<>();

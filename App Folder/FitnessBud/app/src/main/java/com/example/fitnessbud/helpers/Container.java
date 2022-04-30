@@ -22,11 +22,12 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Container extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
+
+        getSupportActionBar().hide();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 

@@ -60,8 +60,8 @@
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
-
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

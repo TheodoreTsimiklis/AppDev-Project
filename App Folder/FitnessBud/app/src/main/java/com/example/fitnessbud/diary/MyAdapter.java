@@ -6,7 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,7 +28,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.food_id = food_id;
         this.calorie_id = calorie_id;
     }
-
 
     @NonNull
     @Override
@@ -55,6 +56,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             super(itemView);
             food_id = itemView.findViewById(R.id.textFood);
             calorie_id = itemView.findViewById(R.id.textCals);
+
         }
+
     }
 }

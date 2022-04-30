@@ -31,6 +31,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
 
+        getSupportActionBar().hide();
+
         mAuth = FirebaseAuth.getInstance();
 
         banner = (TextView) findViewById(R.id.banner);

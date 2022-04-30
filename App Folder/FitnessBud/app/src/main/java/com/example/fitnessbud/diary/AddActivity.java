@@ -22,6 +22,9 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
+        getSupportActionBar().setTitle("Add Entry");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         addFood = findViewById(R.id.addFoodItemEditText);
         addCals = findViewById(R.id.addCaloriesEditText);
         addEntry = findViewById(R.id.addBtn);

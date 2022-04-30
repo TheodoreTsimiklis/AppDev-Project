@@ -1,5 +1,7 @@
 package com.example.fitnessbud.home;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,12 +13,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.fitnessbud.R;
 import com.example.fitnessbud.diary.DatabaseHelper;
+
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class ProfileFragment extends Fragment {
 
@@ -35,7 +42,14 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        getParentFragmentManager().setFragmentResultListener("dataFrom1", this, new FragmentResultListener() {
+
+        Calendar calendar = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+
+        TextView textViewDate = v.findViewById(R.id.text_view_date);
+        textViewDate.setText(currentDate);
+
+                getParentFragmentManager().setFragmentResultListener("dataFrom1", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
 
@@ -68,6 +82,7 @@ public class ProfileFragment extends Fragment {
         int totalLeftCals = max - allCals;
 
         progressBar.setProgress(totalLeftCals);
+
         displayCalGoals.setText(totalLeftCals + " calories Remaining");
 
     }
