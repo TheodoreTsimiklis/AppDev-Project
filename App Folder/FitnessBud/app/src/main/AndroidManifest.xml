@@ -11,11 +11,9 @@
         android:theme="@style/Theme.FitnessBud">
         <activity
             android:name=".diary.ViewEntriesActivity"
-            android:parentActivityName=".helpers.Container"
             android:exported="false" />
         <activity
             android:name=".diary.AddActivity"
-            android:parentActivityName=".helpers.Container"
             android:exported="false" />
         <activity
             android:name=".helpers.Container"
