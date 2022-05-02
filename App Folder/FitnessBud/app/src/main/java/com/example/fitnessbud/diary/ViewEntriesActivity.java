@@ -51,9 +51,28 @@ public class ViewEntriesActivity extends AppCompatActivity {
         adapter = new MyAdapter(this,food,calories);
 
         recyclerView.setAdapter(adapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                removeItem((String) viewHolder.itemView.getTag(), (String) viewHolder.itemView.getTag());
+
+            }
+        }).attachToRecyclerView(recyclerView);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         displayData();
+    }
+
+    private void removeItem(String food, String calories) {
+        db.deleteData(food,calories);
     }
 
     private void displayData() {

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private Context ctx;
-    private ArrayList food_id, calorie_id;
+    private ArrayList food_id, calorie_id, ID;
 
     public MyAdapter(Context ctx, ArrayList food_id, ArrayList calorie_id) {
         this.ctx = ctx;
@@ -40,6 +40,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.food_id.setText(String.valueOf(food_id.get(position)));
         holder.calorie_id.setText(String.valueOf(calorie_id.get(position)));
+
+        holder.itemView.setTag(String.valueOf(food_id.get(position)));
+        holder.itemView.setTag(String.valueOf(calorie_id.get(position)));
 
     }
 

@@ -74,4 +74,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return total;
     }
 
+    public void deleteData(String food, String calories) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_NAME,
+                COL1 + "=" + COL1, null);
+    }
+
 }
