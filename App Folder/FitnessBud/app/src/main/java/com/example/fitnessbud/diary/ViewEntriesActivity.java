@@ -15,12 +15,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.fitnessbud.R;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -28,8 +30,6 @@ public class ViewEntriesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<String> food,calories;
-
-    ConstraintLayout constraintLayout;
 
     DatabaseHelper db;
     MyAdapter adapter;
@@ -44,8 +44,6 @@ public class ViewEntriesActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         food = new ArrayList<>();
         calories = new ArrayList<>();
-
-        constraintLayout = findViewById(R.id.constraintLayout);
 
         recyclerView = findViewById(R.id.recyclerView);
         adapter = new MyAdapter(this,food,calories);
