@@ -33,7 +33,7 @@ public class ProfileFragment extends Fragment {
     DatabaseHelper db;
 
     public ProfileFragment() {
-
+    // Final Project
     }
 
     @Override
